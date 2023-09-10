@@ -1,5 +1,6 @@
 import { useState } from "react"
-import OneFilm from "./OneFilm";
+import OneFilm from "./OneFilm"
+import styles from "./OneFilm.module.css"
 
 export default function FetchFilms({ search }) {
     const
@@ -25,8 +26,8 @@ export default function FetchFilms({ search }) {
             Search
         } = films; 
 
-        return <>{Search.map((film) => <OneFilm film={film} />)}</>
+        return <>{Search.map((film) => <OneFilm  key={film.imdbID} film={film} />)}Поиск</>
     }
 
-    return <><button onClick={onClick}>Поиск</button></>
+    return <><button className={styles.btn} onClick={onClick}>Поиск</button></>
 }

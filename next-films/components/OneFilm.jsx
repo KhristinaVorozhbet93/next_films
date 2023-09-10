@@ -2,15 +2,13 @@ import styles from './OneFilm.module.css'
 
 export default function OneFilm({film}) {
   let {
-    Title, Year, imdbID, Type, Poster
+    Title, Year, Poster
   } = film;
   return (
     <>
-    <div className={styles.mar}>
-      <fieldset>{Title}</fieldset>
-      <fieldset>{Year}</fieldset>
-      <fieldset>{imdbID}</fieldset>
-      <fieldset>{Type}</fieldset>
+      <div className={styles.mar}>
+        <div className={styles.text}>{Title + " " + Year}</div>
+        <img src={Poster} />
       </div>
     </>
   )

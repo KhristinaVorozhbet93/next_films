@@ -1,13 +1,16 @@
 import { useState } from "react"
-import GetFilms from "./GetFilms"
+import FetchFilms from "./FetchFilms"
+import styles from "./OneFilm.module.css"
 
-export default function FilmSearch({searchFilm}) {
+export default function FilmSearch({}) {
     const
         [value, setValue] = useState() 
     return (
         <>
-            <input value={value} onInput={evt => setValue(evt.target.value)} />
-            <GetFilms search = {value}/>
+            <div className={styles.cent}>
+                <input value={value} className={styles.inp} onInput={evt => setValue(evt.target.value)} />
+                <FetchFilms search={value} />
+            </div>
         </>
     )
 }
